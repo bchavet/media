@@ -1,0 +1,5 @@
+movies/
+tv/
+artwork/*.jpg
+.AppleDouble/
+.DS_Store

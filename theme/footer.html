@@ -1,0 +1,36 @@
+</div>
+
+<script src="/theme/jquery-2.1.4.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Remove the table header
+        $('tbody tr')[0].remove();
+
+        // Remove all but the file/folder name column
+        $('tr td:first-child').remove();
+        $('tr td:last-child').remove();
+        $('tr td:last-child').remove();
+
+	// Add artwork
+	$('tr').each(function () {
+            var image, text = $(this).find('a').text();
+            if (text === 'Parent Directory') {
+		image = '/theme/home.png';
+            } else if (text[text.length - 1] === '/') {
+		if (text === 'movies/') {
+			image = '/theme/movies.png';
+		} else if (text === 'tv/') {
+			image = '/theme/tv.png';
+		} else {
+			image = '/theme/folder.png';
+		}
+		text = text.substr(0, text.length - 1);
+            } else {
+                image = '/artwork/' + encodeURIComponent(text) + '.jpg';
+            }
+	    $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '">');
+        });
+
+    });
+</script>
