@@ -16,16 +16,10 @@
 	$('tr').each(function () {
             var image, text = $(this).find('a').text();
             if (text === 'Parent Directory') {
-		image = '/theme/home.png';
+		return $(this).remove();
             } else if (text[text.length - 1] === '/') {
-		if (text === 'movies/') {
-			image = '/theme/movies.png';
-		} else if (text === 'tv/') {
-			image = '/theme/tv.png';
-		} else {
-			image = '/theme/folder.png';
-		}
 		text = text.substr(0, text.length - 1);
+		image = '/artwork/' + encodeURIComponent(text) + '.jpg';
             } else {
                 image = '/artwork/' + encodeURIComponent(text) + '.jpg';
             }
