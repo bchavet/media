@@ -8,3 +8,11 @@ IndexIgnore .git .gitignore .htaccess /theme /artwork
 HeaderName /theme/header.html
 ReadmeName /theme/footer.html
 IndexStyleSheet "/theme/style.css"
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteRule ^ / [L]
+</IfModule>
