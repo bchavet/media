@@ -14,5 +14,6 @@ IndexStyleSheet "/theme/style.css"
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
-  RewriteRule ^ / [L]
+  RewriteCond %{HTTP_USER_AGENT} !wispr$
+  RewriteRule ^ / [L,R=302]
 </IfModule>
