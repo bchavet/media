@@ -25,8 +25,15 @@
 		image = '/artwork/' + encodeURIComponent(text) + '.jpg';
             } else {
                 image = '/artwork/' + encodeURIComponent(text) + '.jpg';
+		text = text.substr(0, text.length - 4);
             }
-	    $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '">');
+
+            if (thumbClass === 'portrait') {
+                $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '">');
+            } else {
+                $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '"><span class="title">' + text.replace(' - ', '<br>') + '</span>');
+            }
+
             $(this).addClass(thumbClass);
         });
 
