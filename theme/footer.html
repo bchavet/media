@@ -16,11 +16,13 @@
         var thumbClass = 'portrait';
 	$('tr').each(function () {
             var image;
+            var tv = false;
             var text = $(this).find('a').text();
             if (text === 'Parent Directory') {
                 thumbClass = 'landscape';
 		return $(this).remove();
             } else if (text[text.length - 1] === '/') {
+                tv = true; // Subdirectories imply a TV series
 		text = text.substr(0, text.length - 1);
 		image = '/artwork/' + encodeURIComponent(text) + '.jpg';
             } else {
@@ -28,12 +30,18 @@
 		text = text.substr(0, text.length - 4);
             }
 
-            if (thumbClass === 'portrait') {
-                $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '">');
-            } else {
-                $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '"><span class="title">' + text.replace(' - ', '<br>') + '</span>');
+            var html = '<img src="' + image + '" alt="' + text + '">';
+
+            if (thumbClass === 'landscape') {
+                html += '<span class="title">' + text.replace(' - ', '<br>') + '</span>';
             }
 
+            if (tv) {
+                $(this).addClass('tv');
+                html += '<img src="/theme/tv.png" class="tv">';
+            }
+
+            $(this).find('td > a').html(html);
             $(this).addClass(thumbClass);
         });
 

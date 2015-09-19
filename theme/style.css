@@ -83,6 +83,15 @@ td a img {
 	width: 100%;
 }
 
+img.tv {
+	width: 56px;
+	height: 56px;
+	position: relative;
+	top: -64px;
+	left: 8px;
+	margin-bottom: -64px;
+}
+
 span.title {
 	position: relative;
 	top: -50px;
