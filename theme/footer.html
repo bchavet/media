@@ -13,9 +13,12 @@
         $('tr td:last-child').remove();
 
 	// Add artwork
+        var thumbClass = 'portrait';
 	$('tr').each(function () {
-            var image, text = $(this).find('a').text();
+            var image;
+            var text = $(this).find('a').text();
             if (text === 'Parent Directory') {
+                thumbClass = 'landscape';
 		return $(this).remove();
             } else if (text[text.length - 1] === '/') {
 		text = text.substr(0, text.length - 1);
@@ -24,6 +27,7 @@
                 image = '/artwork/' + encodeURIComponent(text) + '.jpg';
             }
 	    $(this).find('td > a').html('<img src="' + image + '" alt="' + text + '">');
+            $(this).addClass(thumbClass);
         });
 
     });

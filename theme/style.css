@@ -82,15 +82,27 @@ td a img {
 	width: 100%;
 }
 
-@media (max-width: 320px)  { tr { width: 100%; max-width: 100%; } }
-@media (min-width: 320px)  { tr { width: 50%; } }
-@media (min-width: 480px)  { tr { width: 33.333%; } }
-@media (min-width: 640px)  { tr { width: 25%; } }
-@media (min-width: 800px)  { tr { width: 20%; } }
-@media (min-width: 960px)  { tr { width: 16.667%; } }
-@media (min-width: 1120px) { tr { width: 14.286%; } }
-@media (min-width: 1280px) { tr { width: 12.5%; } }
-@media (min-width: 1440px) { tr { width: 11.111%; } }
-@media (min-width: 1600px) { tr { width: 10%; } }
-@media (min-width: 1760px) { tr { width: 9.091%; } }
-@media (min-width: 1960px) { tr { width: 160px; } }
+@media (max-width: 320px)  { tr.portrait { width: 100%; max-width: 100%; } }
+@media (min-width: 320px)  { tr.portrait { width: 50%; } }
+@media (min-width: 480px)  { tr.portrait { width: 33.333%; } }
+@media (min-width: 640px)  { tr.portrait { width: 25%; } }
+@media (min-width: 800px)  { tr.portrait { width: 20%; } }
+@media (min-width: 960px)  { tr.portrait { width: 16.667%; } }
+@media (min-width: 1120px) { tr.portrait { width: 14.286%; } }
+@media (min-width: 1280px) { tr.portrait { width: 12.5%; } }
+@media (min-width: 1440px) { tr.portrait { width: 11.111%; } }
+@media (min-width: 1600px) { tr.portrait { width: 10%; } }
+@media (min-width: 1760px) { tr.portrait { width: 9.091%; } }
+@media (min-width: 1960px) { tr.portrait { width: 160px; } }
+
+@media (max-width: 480px)  { tr.landscape { width: 100%; max-width: 100%; } }
+@media (min-width: 480px)  { tr.landscape { width: 50%; } }
+@media (min-width: 640px)  { tr.landscape { width: 33.333%; } }
+@media (min-width: 800px)  { tr.landscape { width: 25%; } }
+@media (min-width: 960px)  { tr.landscape { width: 20%; } }
+@media (min-width: 1120px) { tr.landscape { width: 16.667%; } }
+@media (min-width: 1280px) { tr.landscape { width: 14.286%; } }
+@media (min-width: 1440px) { tr.landscape { width: 12.5%; } }
+@media (min-width: 1600px) { tr.landscape { width: 11.111%; } }
+@media (min-width: 1760px) { tr.landscape { width: 10%; } }
+@media (min-width: 1960px) { tr.landscape { width: 160px; } }
