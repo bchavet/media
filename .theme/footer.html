@@ -1,6 +1,6 @@
 </div>
 
-<script src="/theme/jquery-2.1.4.min.js"></script>
+<script src="/.theme/jquery-2.1.4.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -24,9 +24,9 @@
             } else if (text[text.length - 1] === '/') {
                 tv = true; // Subdirectories imply a TV series
 		text = text.substr(0, text.length - 1);
-		image = '/artwork/' + encodeURIComponent(text) + '.jpg';
+		image = '/.artwork/' + encodeURIComponent(text) + '.jpg';
             } else {
-                image = '/artwork/' + encodeURIComponent(text) + '.jpg';
+                image = '/.artwork/' + encodeURIComponent(text) + '.jpg';
 		text = text.substr(0, text.length - 4);
             }
 
@@ -38,7 +38,7 @@
 
             if (tv) {
                 $(this).addClass('tv');
-                html += '<img src="/theme/tv.png" class="tv">';
+                html += '<img src="/.theme/tv.png" class="tv">';
             }
 
             $(this).find('td > a').html(html);
